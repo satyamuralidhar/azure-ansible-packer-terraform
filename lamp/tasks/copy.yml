@@ -6,4 +6,6 @@
       dest: /var/www/html/lamp.php
       mode: '0644'
     notify:
+    - restart httpd
+    - restart apache
     when: ansible_os_family == "RedHat"

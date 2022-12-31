@@ -4,6 +4,6 @@
       name: apache2
       update_cache: yes
       state: present
-  notify:
-  - restart apache
-  when: ansible_os_family == "Debian"
+   notify:
+   - restart apache
+   when: ansible_os_family == "Debian"
