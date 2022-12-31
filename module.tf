@@ -9,6 +9,9 @@ module "packer" {
   tags         = var.tags
   //storage_name = var.storage_name
   location     = var.location
+  depends_on = [
+    azurerm_resource_group.myrsg
+  ]
 }
 
 module "virtualmachine" {
