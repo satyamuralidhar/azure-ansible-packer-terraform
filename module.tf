@@ -41,7 +41,7 @@ module "virtualmachine" {
   subnet_cidr        = var.subnet_cidr
   configuration_file = var.configuration_file
   private_key        = var.private_key
-  packerimage        = module.virtualmachine.packerimage
+  packerimage        = var.packerimage
   public_key         = var.public_key
   user_name          = var.user_name
   depends_on = [
