@@ -4,7 +4,7 @@ echo $OSTYPE
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo yum update -y
-    sudo yum install remove -y
+    sudo yum remove ansible -y
 else 
     sudo apt -y remove --purge ansible
     sudo apt-add-repository --remove ppa:ansible/ansible
