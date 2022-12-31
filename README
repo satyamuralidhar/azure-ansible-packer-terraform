@@ -19,3 +19,6 @@ terraform validate
 terraform plan
 terraform apply --auto-approve 
 terraform destroy --auto-approve
+
+try after succesfully completion of terraform 
+http://public_ip:80/lamp.php
