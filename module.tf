@@ -3,24 +3,27 @@ resource "azurerm_resource_group" "myrsg" {
   location = var.location
 }
 
+resource "null_resource" "rsg" {
+  provisioner "local-exec" {
+    command = "echo 'waiting for rsg got ready' && sleep 30"
+  }
+  depends_on = [
+    azurerm_resource_group.myrsg
+  ]
+}
+
+
 module "packer" {
   source   = "./packer_infra"
   rsg      = azurerm_resource_group.myrsg.name
   tags     = var.tags
   location = var.location
   depends_on = [
-    azurerm_resource_group.myrsg
-  ]
-}
-
-resource "null_resource" "rsg" {
-  provisioner "local-exec" {
-    command = "echo 'waiting for rsg got ready' && sleep 30"
-  }
-  depends_on = [
     module.packer
   ]
 }
+
+
 resource "null_resource" "packer-cmds" {
   provisioner "local-exec" {
     command = "packer build -var-file='../azure.hcl' packer"
