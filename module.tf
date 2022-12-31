@@ -23,13 +23,6 @@ resource "null_resource" "packer-cmds" {
   ]
 }
 
-data "azurerm_image" "packerimage" {
-  resource_group_name = var.rsg
-  name = var.packerimage
-  depends_on = [
-    module.packer
-  ]
-}
 
 module "virtualmachine" {
   source             = "./virtualmachine"
@@ -40,7 +33,7 @@ module "virtualmachine" {
   subnet_cidr        = var.subnet_cidr
   configuration_file = var.configuration_file
   private_key        = var.private_key
-  packerimage        = var.packerimage
+  packerimage        = module.virtualmachine.packerimage
   public_key         = var.public_key
   user_name          = var.user_name
   depends_on = [

@@ -4,3 +4,6 @@ output "public_ip" {
 output "vm_resource_id" {
   value = module.virtualmachine.vm_resource_id
 }
+output "packerimage" {
+  value = module.virtualmachine.packerimage
+}
