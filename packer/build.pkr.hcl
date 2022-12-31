@@ -23,7 +23,6 @@ build {
       "sudo chmod +x scripts/ansible_installation.sh",
       "sudo sh scripts/ansible_installation.sh"
     ]
-    inline_shebang = "/bin/sh -x"
   }
   provisioner "ansible" {
     playbook_file = var.playbook
