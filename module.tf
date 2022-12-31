@@ -18,13 +18,11 @@ resource "null_resource" "packer-cmds" {
   provisioner "local-exec" {
     command = "packer build -var-file='../azure.hcl' packer"
   }
+  depends_on = [
+    module.packer
+  ]
 }
 
-resource "null_resource" "sleep" {
-  provisioner "local-exec" {
-    command = "echo -e 'waiting for packerimage got ready' && sleep 30"
-  }
-}
 
 module "virtualmachine" {
   source             = "./virtualmachine"
@@ -39,6 +37,8 @@ module "virtualmachine" {
   public_key         = var.public_key
   user_name          = var.user_name
   depends_on = [
-    null_resource.sleep
+    azurerm_resource_group.name,
+    module.packer,
+    null_resource.packer-cmds
   ]
 }
