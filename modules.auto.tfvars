@@ -1,10 +1,10 @@
-rsg          = "packer-rsg"
-location     = "eastus"
-tags         = { "Account" = "Storage", "Subscription" = "Dev", "Application" = "Packer-Image" }
+rsg      = "packer-rsg"
+location = "eastus"
+tags     = { "Account" = "Storage", "Subscription" = "Dev", "Application" = "Packer-Image" }
 #storage_name = "packerstg01"
 
-vnet_cidr    = ["192.168.0.0/16"]
-subnet_cidr  = ["192.168.1.0/24"]
+vnet_cidr   = ["192.168.0.0/16"]
+subnet_cidr = ["192.168.1.0/24"]
 
 private_key        = "id_rsa"
 configuration_file = "configuration.tpl"

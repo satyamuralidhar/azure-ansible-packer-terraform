@@ -4,10 +4,10 @@ resource "azurerm_resource_group" "myrsg" {
 }
 
 module "packer" {
-  source       = "./packer_infra"
-  rsg          = azurerm_resource_group.myrsg.name
-  tags         = var.tags
-  location     = var.location
+  source   = "./packer_infra"
+  rsg      = azurerm_resource_group.myrsg.name
+  tags     = var.tags
+  location = var.location
   depends_on = [
     azurerm_resource_group.myrsg
   ]

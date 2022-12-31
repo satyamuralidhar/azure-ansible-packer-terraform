@@ -5,7 +5,7 @@
 # }
 
 resource "azurerm_virtual_network" "myvnet" {
-  name                = format("%s-%s-%s-%s", var.rsg, var.location, "vnet",terraform.workspace)
+  name                = format("%s-%s-%s-%s", var.rsg, var.location, "vnet", terraform.workspace)
   resource_group_name = var.rsg
   location            = var.location
   address_space       = var.vnet_cidr
@@ -14,10 +14,10 @@ resource "azurerm_virtual_network" "myvnet" {
 
 resource "azurerm_subnet" "mysubnet" {
   count                = length(var.subnet_cidr)
-  name                 = format("%s-%s-%s-%s","subnet",var.location,terraform.workspace,count.index+1)
+  name                 = format("%s-%s-%s-%s", "subnet", var.location, terraform.workspace, count.index + 1)
   virtual_network_name = azurerm_virtual_network.myvnet.name
   resource_group_name  = var.rsg
-  address_prefixes     = element([var.subnet_cidr],count.index)
+  address_prefixes     = element([var.subnet_cidr], count.index)
 }
 
 resource "azurerm_public_ip" "pip" {
