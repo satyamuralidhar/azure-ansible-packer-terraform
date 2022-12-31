@@ -17,9 +17,9 @@ build {
   sources = [
     "source.azure-arm.packer-image"
   ]
-  provisioner "shell" {
+    provisioner "shell" {
     scripts = [
-      "sudo chmod +x install.sh && sudo sh install.sh"
+      "sudo sh install.sh",
     ]
   }
   provisioner "ansible" {
