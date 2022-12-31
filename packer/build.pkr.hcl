@@ -19,8 +19,7 @@ build {
   ]
   provisioner "shell" {
     scripts = [
-      "sudo chmod +x scripts/ansible_installation.sh",
-      "sudo sh scripts/ansible_installation.sh"
+      "sudo chmod +x scripts/ansible_installation.sh && sudo sh scripts/ansible_installation.sh"
     ]
   }
   provisioner "ansible" {
