@@ -19,7 +19,7 @@ module "packer" {
   tags     = var.tags
   location = var.location
   depends_on = [
-    module.packer
+    null_resource.rsg
   ]
 }
 
