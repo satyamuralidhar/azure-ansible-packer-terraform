@@ -19,6 +19,7 @@ resource "null_resource" "packer-cmds" {
     command = "packer build -var-file='../azure.hcl' packer"
   }
   depends_on = [
+    azurerm_resource_group.myrsg,
     module.packer
   ]
 }
