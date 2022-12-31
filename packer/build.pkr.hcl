@@ -25,8 +25,8 @@ build {
     inline_shebang = "/bin/sh -x"
   }
   provisioner "ansible" {
-      playbook_file = var.playbook
-      roles_path = "../lamp"
+    playbook_file = var.playbook
+    roles_path    = "../lamp"
   }
   provisioner "shell" {
     inline = [
@@ -40,7 +40,7 @@ build {
     ]
     inline_shebang = "/bin/sh -x"
   }
-    provisioner "shell" {
+  provisioner "shell" {
     inline = [
       "sudo chmod +x packer/scripts/ansible_uninstall.sh",
       "sudo packer/scripts/ansible_uninstall.sh"
