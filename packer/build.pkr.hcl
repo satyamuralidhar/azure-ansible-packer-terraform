@@ -20,8 +20,8 @@ build {
   provisioner "shell" {
     scripts = [
       "sudo echo $PWD",
-      "sudo chmod +x scripts/ansible_installation.sh",
-      "sudo sh scripts/ansible_installation.sh"
+      "sudo chmod +x {{ template_dir }}scripts/ansible_installation.sh",
+      "sudo sh {{ template_dir }}scripts/ansible_installation.sh"
     ]
     inline_shebang = "/bin/sh -x"
   }
@@ -43,8 +43,8 @@ build {
   }
   provisioner "shell" {
     scripts = [
-      "sudo chmod +x scripts/ansible_uninstall.sh",
-      "sudo sh scripts/ansible_uninstall.sh"
+      "sudo chmod +x {{ template_dir }}scripts/ansible_uninstall.sh",
+      "sudo sh {{ template_dir }}scripts/ansible_uninstall.sh"
     ]
     inline_shebang = "/bin/sh -x"
   }
