@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "myrsg" {
 }
 
 module "packer" {
-  source       = "./packer"
+  source       = "./packer_infra"
   rsg          = azurerm_resource_group.myrsg.name
   tags         = var.tags
   storage_name = var.storage_name
