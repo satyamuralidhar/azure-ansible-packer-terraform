@@ -23,6 +23,14 @@ resource "null_resource" "packer-cmds" {
   ]
 }
 
+resource "null_resource" "sleep" {
+  provisioner "local-exec" {
+    command = "echo 'waiting for packerimage got ready' && sleep 30"
+  }
+  depends_on = [
+    null_resource.packer-cmds
+  ]
+}
 
 module "virtualmachine" {
   source             = "./virtualmachine"
