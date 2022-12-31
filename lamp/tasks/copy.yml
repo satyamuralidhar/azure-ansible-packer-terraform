@@ -1,6 +1,6 @@
   - name: Copy file with owner and permissions
     copy:
-      src: '${PWD}/lamp.php'
+      src: lamp.php
       owner: satya
       group: satya
       dest: /var/www/html/lamp.php
