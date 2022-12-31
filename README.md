@@ -1,4 +1,4 @@
-<!-- create a hcl file like below values:
+create a hcl file like below values:
 azure.hcl
 client_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 subscription_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -14,5 +14,5 @@ terraform init
 terraform validate
 terraform plan
 terraform apply --auto-approve 
-terraform destroy --auto-approve -->
-image.png
+terraform destroy --auto-approve
+
