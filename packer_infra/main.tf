@@ -13,15 +13,15 @@ locals {
 }
 
 
-resource "azurerm_storage_account" "mystorage" {
-  name                     = lower(var.storage_name)
-  resource_group_name      = var.rsg
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  tags                     = local.required_tags
+# resource "azurerm_storage_account" "mystorage" {
+#   name                     = lower(var.storage_name)
+#   resource_group_name      = var.rsg
+#   location                 = var.location
+#   account_tier             = "Standard"
+#   account_replication_type = "LRS"
+#   tags                     = local.required_tags
 
-}
+# }
 
 # resource "null_resource" "packer-cmds" {
 #   provisioner "local-exec" {

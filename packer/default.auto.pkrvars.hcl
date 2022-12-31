@@ -1,5 +1,5 @@
 resource_group_name = "packer-rsg-dev"
-storage_account     = "packerstg01"
+#storage_account     = "packerstg01"
 location            = "eastus"
 packer_image_name   = "packerterrform01"
 playbook            = "lamp.yml"
