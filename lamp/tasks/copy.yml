@@ -1,8 +1,8 @@
   - name: Copy file with owner and permissions
     copy:
       src: lamp.php
-      owner: satya
-      group: satya
+      owner: root
+      group: root
       dest: /usr/share/httpd/noindex/lamp.php
       #dest: /var/www/html/lamp.php
       mode: '0644'
