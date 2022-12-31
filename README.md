@@ -1,10 +1,14 @@
 create a hcl file like below values:
+=====================================
 azure.hcl
 client_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 subscription_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 tenant_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 client_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
+
+commands: 
+==========
 git clone repo 
 cd repo
 terraform init
