@@ -3,23 +3,13 @@ resource "azurerm_resource_group" "myrsg" {
   location = var.location
 }
 
-resource "null_resource" "rsg" {
-  provisioner "local-exec" {
-    command = "echo 'waiting for rsg got ready' && sleep 30"
-  }
-  depends_on = [
-    azurerm_resource_group.myrsg
-  ]
-}
-
-
 module "packer" {
   source   = "./packer_infra"
   rsg      = azurerm_resource_group.myrsg.name
   tags     = var.tags
   location = var.location
   depends_on = [
-    null_resource.rsg
+    azurerm_resource_group.myrsg
   ]
 }
 
