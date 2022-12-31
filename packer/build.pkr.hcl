@@ -19,7 +19,7 @@ build {
   ]
   provisioner "shell" {
     inline = [
-      "sudo echo $PWD"
+      "sudo echo `$PWD`"
       "sudo chmod +x packer/scripts/ansible_installation.sh",
       "sudo sh packer/scripts/ansible_installation.sh"
     ]
