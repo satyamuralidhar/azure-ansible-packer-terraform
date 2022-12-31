@@ -1,6 +1,6 @@
 ---
 - include_tasks: apache.yml
-- include_tasks: httpd.yaml
+- include_tasks: httpd.yml
 - include_tasks: lamp_redhat.yml
 - include_tasks: lamp_ubuntu.yml
 - include_tasks: copy.yml
