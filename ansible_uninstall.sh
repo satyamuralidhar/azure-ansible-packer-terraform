@@ -1,3 +1,7 @@
+#!/bin/bash
+set -x
+echo $OSTYPE
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo yum update -y
     sudo yum install remove -y
