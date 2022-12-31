@@ -20,4 +20,5 @@ terraform plan
 terraform apply --auto-approve 
 terraform destroy --auto-approve
 
+<img src="https://user-images.githubusercontent.com/38804803/210152800-cd2720a3-d6a9-4d77-a07b-463da3e462c7.png" width="30"/>
 ![phpimage](https://user-images.githubusercontent.com/38804803/210152800-cd2720a3-d6a9-4d77-a07b-463da3e462c7.png)
