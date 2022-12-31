@@ -3,7 +3,7 @@ set -x
 echo $OSTYPE
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    sudo yum update -y
+    #sudo yum update -y
     sudo yum install ansible -y
 else 
     sudo apt -y update && sudo apt-get -y upgrade
