@@ -1,0 +1,8 @@
+resource_group_name = "packer-rsg-dev"
+storage_account     = "packerstg01"
+location            = "eastus"
+packer_image_name   = "packerterrform01"
+# client_id           = ""
+# subscription_id     = ""
+# tenant_id           = ""
+# client_secret       = ""
