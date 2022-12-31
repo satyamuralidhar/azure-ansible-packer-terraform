@@ -23,6 +23,14 @@ resource "null_resource" "packer-cmds" {
   ]
 }
 
+data "azurerm_image" "packerimage" {
+  resource_group_name = var.rsg
+  name = var.packerimage
+  depends_on = [
+    module.packer
+  ]
+}
+
 module "virtualmachine" {
   source             = "./virtualmachine"
   rsg                = azurerm_resource_group.myrsg.name
