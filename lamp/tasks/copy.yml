@@ -3,7 +3,8 @@
       src: lamp.php
       owner: satya
       group: satya
-      dest: /var/www/html/lamp.php
+      dest: /usr/share/httpd/noindex/lamp.php
+      #dest: /var/www/html/lamp.php
       mode: '0644'
     notify:
     - restart httpd
