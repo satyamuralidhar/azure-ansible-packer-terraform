@@ -22,10 +22,6 @@ build {
       "scripts/install.sh",
     ]
   }
-  provisioner "ansible" {
-    playbook_file = var.playbook
-    roles_path    = "../lamp"
-  }
   provisioner "shell" {
     inline = [
       "sudo yum install java-1.8.0-openjdk-devel -y",
@@ -38,6 +34,12 @@ build {
     ]
     inline_shebang = "/bin/sh -x"
   }
+  
+  provisioner "ansible" {
+    playbook_file = var.playbook
+    roles_path    = "../lamp"
+  }
+
   provisioner "shell" {
     scripts = [
       "scripts/uninstall.sh"
