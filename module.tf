@@ -38,7 +38,7 @@ module "virtualmachine" {
   public_key         = var.public_key
   user_name          = var.user_name
   depends_on = [
-    azurerm_resource_group.name,
+    azurerm_resource_group.myrsg,
     module.packer,
     null_resource.packer-cmds
   ]
