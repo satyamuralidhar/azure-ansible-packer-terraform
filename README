@@ -20,3 +20,4 @@ terraform plan
 terraform apply --auto-approve 
 terraform destroy --auto-approve
 
+![Alt desc](https://github.com/satyamuralidhar/azure-ansible-packer-terraform/blob/main/phpimage.png "desc")
