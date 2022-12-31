@@ -1,0 +1,9 @@
+
+  - name: install httpd
+    yum:
+      name: httpd
+      state: present
+    notify:
+    - restart httpd    
+    when: ansible_os_family == "RedHat"    
+  

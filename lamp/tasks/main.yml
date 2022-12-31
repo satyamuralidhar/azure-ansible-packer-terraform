@@ -1,2 +1,3 @@
 ---
-# tasks file for lamp
+- include_tasks: lamp.yml
+- include_tasks: apache.yml

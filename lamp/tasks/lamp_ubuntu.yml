@@ -1,0 +1,12 @@
+  - name: installing php
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - php
+    - libapache2-mod-php
+    - php-mcrypt 
+    - php-mysql  
+    notify:
+    - restart apache 
+    when: ansible_os_family == "Debian"

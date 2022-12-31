@@ -1,0 +1,9 @@
+  - name: install php
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - php
+    - php-mysql
+    notify: 
+    when: ansible_os_family == "RedHat"    
