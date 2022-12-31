@@ -55,6 +55,6 @@ module "virtualmachine" {
   public_key         = var.public_key
   user_name          = var.user_name
   depends_on = [
-    module.packer
+    null_resource.sleep
   ]
 }
