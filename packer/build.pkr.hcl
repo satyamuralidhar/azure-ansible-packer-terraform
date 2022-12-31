@@ -19,7 +19,6 @@ build {
   ]
   provisioner "shell" {
     scripts = [
-      "sudo echo $PWD",
       "sudo chmod +x scripts/ansible_installation.sh",
       "sudo sh scripts/ansible_installation.sh"
     ]
