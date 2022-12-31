@@ -1,6 +1,6 @@
 create a hcl file like below values:
 =====================================
-azure.hcl
+azure.hcl ==> create outside of the git repo
 client_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 subscription_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 tenant_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
