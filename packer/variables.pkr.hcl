@@ -20,3 +20,5 @@ variable "location" {
   type = string
 }
 variable "packer_image_name" {}
+
+variable "playbook" {}

@@ -19,6 +19,16 @@ build {
   ]
   provisioner "shell" {
     inline = [
+      "sudo chmod +x ansible_installation.sh"
+    ]
+    inline_shebang = "/bin/sh -x"
+  }
+  provisioner "ansible" {
+      playbook_file = var.playbook
+      roles_path = "../lamp"
+  }
+  provisioner "shell" {
+    inline = [
       "sudo yum install java-1.8.0-openjdk-devel -y",
       "sudo yum install httpd -y",
       "sudo firewall-cmd --zone=public --add-service=http",
@@ -26,6 +36,12 @@ build {
       "sudo service httpd restart",
       "sudo service httpd status",
       "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+    ]
+    inline_shebang = "/bin/sh -x"
+  }
+    provisioner "shell" {
+    inline = [
+      "sudo chmod +x ansible_uninstall.sh"
     ]
     inline_shebang = "/bin/sh -x"
   }
