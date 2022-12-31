@@ -1,1 +1,0 @@
-# azure-ansible-packer-terraform
