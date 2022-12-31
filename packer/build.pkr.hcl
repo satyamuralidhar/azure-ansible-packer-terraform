@@ -40,7 +40,7 @@ build {
   }
   provisioner "shell" {
     scripts = [
-      "sudo scripts/uninstall.sh"
+      "scripts/uninstall.sh"
     ]
     inline_shebang = "/bin/sh -x"
   }
